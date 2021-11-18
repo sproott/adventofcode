@@ -68,7 +68,7 @@ lineP = do
 solveIO :: (Input -> Bool) -> IO ()
 solveIO fn = do
   inputs <- fmap fst . catMaybes . fmap (runParser lineP) . lines <$> readFile "input.txt"
-  print $ length $ filter id $ fmap fn inputs
+  print $ length $ filter fn inputs
 
 main1 :: IO ()
 main1 = solveIO solve1
