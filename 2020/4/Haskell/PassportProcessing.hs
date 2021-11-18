@@ -14,8 +14,6 @@ readUnit "cm" = pure Cm
 readUnit "in" = pure In
 readUnit _    = Nothing
 
-data Ecl = Amb | Blu | Brn | Gry | Grn | Hzl | Oth deriving (Eq, Show)
- 
 data Record = Record { byr :: Field, iyr :: Field, eyr :: Field, hgt :: Field, hcl :: Field, ecl :: Field, pid :: Field } deriving (Eq, Show)
 
 emptyRecord :: Record
