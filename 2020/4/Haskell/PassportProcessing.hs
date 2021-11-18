@@ -49,7 +49,7 @@ validatePid str = length str == 9 && isJust (readMaybe @Int str)
 validateNum :: (Int, Int) -> String -> Bool
 validateNum (min, max) str = isJust $ do 
   num <- readMaybe str
-  boolToMaybe $ length str == 4 && num >= min && num <= max
+  boolToMaybe $ num >= min && num <= max
 
 updateRecord :: Record -> String -> String -> Record
 updateRecord r "byr" val = r { byr = pure $ validateNum (1920, 2002) val }
