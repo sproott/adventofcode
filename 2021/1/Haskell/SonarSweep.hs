@@ -9,7 +9,7 @@ genWindowSums n xs
   | otherwise = sum (take n xs) : genWindowSums n (tail xs)
 
 solve1 :: [Int] -> Int
-solve1 = length . filter (> 0) . mapAdjacent subtract
+solve1 = length . filter id . mapAdjacent (<)
 
 solve2 :: [Int] -> Int
 solve2 = solve1 . genWindowSums 3
